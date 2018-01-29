@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sticky Header</title>
+    
+    <!-- import Google font -->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    
+    <style>
+        
+        /** * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) * http://cssreset.com */html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {	margin: 0;	padding: 0;	border: 0;	font-size: 100%;	font: inherit;	vertical-align: baseline;}/* HTML5 display-role reset for older browsers */article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {	display: block;}body {	line-height: 1;}ol, ul {	list-style: none;}blockquote, q {	quotes: none;}blockquote:before, blockquote:after,q:before, q:after {	content: '';	content: none;}table {	border-collapse: collapse;	border-spacing: 0;}
+        
+        
+        * {
+  margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+
+header{
+  text-align: left;
+  font-size: 12px;
+  line-height: 10px;
+  height: 100px;
+  background: #335C7D;
+  color: #fff;
+  font-family: 'PT Sans', sans-serif;
+  transition: all 0.4s ease;
+}
+
+header.sticky {
+  position: fixed;
+  font-size: 12px;
+  line-height: 10px;
+  height: 100px; 
+  width: 100%;
+  background: #efc47D;
+  text-align: left;
+  padding-left: 0px;
+}
+
+article.sticky {
+  display: inline-block;
+  margin-top: 108px;
+}
+    </style>
+
+</head>
+<body>
+    <header><h1>Sticky Header</h1></header>
+    <article>
+      <p>Hello World!</p>
+      <img src="http://netdna.webdesignerdepot.com/uploads7/how-to-create-an-animated-sticky-header-with-css3-and-jquery/large-image.jpg" width="782" height="2000" alt="Big Image" />
+    </article>
+
+
+
+
+    <!-- import jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- write script to toggle class on scroll -->
+    <script>
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 1){  
+                $('header').addClass("sticky");
+                $('article').addClass("sticky");
+            }
+            else{
+                $('header').removeClass("sticky");
+                $('article').removeClass("sticky");
+            }
+        });
+    </script>
+</body>
+</html>
